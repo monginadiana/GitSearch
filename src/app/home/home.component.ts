@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Repo } from '../repo';
+import { User } from '../user';
+import { ServicesService } from '../services/services.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +9,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  userDetails !: User 
+  userRepositories!: Repo;
+   constructor(private serviceService: ServicesService ) {}
+ 
+   ngOnInit(): void {
+     this.getdetailsUser('monginadiana');
+    //  this.getdetailsRepo('monginadiana');
+   }
+   getdetailsUser(gitUsername: any) {
+    this.serviceService.getprofile(gitUsername).then(
+      (response) => {
+        this.userDetails = this.serviceService.userDetails;
+        console.log(this.userDetails);
+      },
+      (error) => {
+        console.log(error);
+      }
+    
+    );
+  } 
 
 }

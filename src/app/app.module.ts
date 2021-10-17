@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { NavbarComponent } from './navbar/navbar.component';
-import { ReposirotyNameComponent } from './reposiroty-name/reposiroty-name.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
@@ -16,9 +16,9 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
    
     NavbarComponent,
-    ReposirotyNameComponent,
     ProfileComponent,
     HomeComponent,
+    UserComponent,
     
   ],
   imports: [

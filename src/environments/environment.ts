@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  BASEURL:"https://api.github.com"
+  BASEURL:"https://api.github.com",
+  keyApi:"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"
 
 };
 

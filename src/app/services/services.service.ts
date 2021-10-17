@@ -1,26 +1,115 @@
 import { Injectable } from '@angular/core';
 import{ HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Repo } from '../repo';
+import { User} from '../user';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServicesService {
-  private baseurl = environment.BASEURL
+  userDetails:User;
+  repoDetails:Repo;
 
-  constructor(private httpClient:HttpClient) { 
-
-  }
-  getrepo(username:string):Observable<any[]>{
-    const endpoint="users"
-    return this.httpClient.get<any[]>(`${this.baseurl}/${endpoint}/${username}/repos`,{
-      
-    }
-  )
-  }
+  constructor(private http:HttpClient) { 
+    this.userDetails = new User(
+      '', '', '', '', 0, 0, new Date()
     
+    );
+    this.repoDetails=new Repo(
+      '', '', '', '', 0
+    )
   }
+    getprofile(gitUsername:any){
+      interface ApiUserAnswer{
+        name: string,
+        login:string,
+        bio: string,
+        avatar_url:string,
+        followers: number,
+        following: number,
+        created_at: Date
+  }
+      let userPromise = new Promise<void>((resolve, reject) =>
+      this.http.get<ApiUserAnswer>(
+          environment.BASEURL +
+            '/' +
+            gitUsername +
+            '??access_token=' +
+            environment. keyApi
+        )
+        .toPromise()
+        .then(
+          (response) => {
+            this.userDetails = response;
+            resolve();
+            console.log()
+          },
+          (error) => {
+            reject(error);
+            console.log(error);
+          }
+        ))
+        return userPromise
+        };
+       
+      }
+      getrepo(gitRepos:any){
+        interface ApiUserAnswer{
+        name:string,
+        description:string,
+        language: string,
+        html_url:string,
+        forks: number
+    }
+        let userPromise = new Promise<void>((resolve, reject) =>
+        this.http.get<ApiUserAnswer>(
+            environment.BASEURL +
+              '/' +
+              gitRepos +
+              '??access_token=' +
+              environment. keyApi
+          )
+          .toPromise()
+          .then(
+            (response) => {
+              this.repoDetails = response;
+              resolve();
+              console.log()
+            },
+            (error) => {
+              reject(error);
+              console.log(error);
+            }
+          ))
+          return userPromise
+ };
 
+        
+          
+            
+          
+    
+  
+     
+    
+    
+    
+      
+    
+  
+  
+  
+        
+          
+        
+  
+
+   
+  
+  
+  
+    
+  
 
 
