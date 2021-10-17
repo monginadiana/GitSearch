@@ -7,11 +7,13 @@ import { ServicesService }
   styleUrls: ['./reposiroty-name.component.css']
 })
 export class ReposirotyNameComponent implements OnInit {
+  username ="monginadiana"
+  repositories:any[]=[]
 
   constructor(private serviceService:ServicesService) { }
 
   getuserrepo(){
-    return this.serviceService.getrepo().subscribe((response:any[])=>{
+    return this.serviceService.getrepo(this.username).subscribe((response:any[])=>{
       console.log(response)
     })
   }
