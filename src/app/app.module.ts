@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ReposirotyNameComponent } from './reposiroty-name/reposiroty-name.component';
 import { ProfileComponent } from './profile/profile.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { ProfileComponent } from './profile/profile.component';
     NavbarComponent,
     ReposirotyNameComponent,
     ProfileComponent,
+    HomeComponent,
     
   ],
   imports: [
