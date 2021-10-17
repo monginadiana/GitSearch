@@ -14,7 +14,10 @@ export class ServicesService {
   }
   getrepo(username:string):Observable<any[]>{
     const endpoint="users"
-    return this.httpClient.get<any[]>(`${this.baseurl}/${endpoint}/${username}/repos`)
+    return this.httpClient.get<any[]>(`${this.baseurl}/${endpoint}/${username}/repos`,{
+      
+    }
+  )
   }
     
   }

@@ -14,7 +14,7 @@ import { ReposirotyNameComponent } from './reposiroty-name/reposiroty-name.compo
     AppComponent,
    
     NavbarComponent,
-        ReposirotyNameComponent,
+    ReposirotyNameComponent,
     
   ],
   imports: [

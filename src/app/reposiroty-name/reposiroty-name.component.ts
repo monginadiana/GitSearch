@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicesService }
- from '../services/services.service';
+import { ServicesService }from '../services/services.service';
 @Component({
   selector: 'app-reposiroty-name',
   templateUrl: './reposiroty-name.component.html',
   styleUrls: ['./reposiroty-name.component.css']
 })
 export class ReposirotyNameComponent implements OnInit {
-  username ="monginadiana"
+  username ='monginadiana'
   repositories:any[]=[]
 
   constructor(private serviceService:ServicesService) { }
@@ -15,10 +14,13 @@ export class ReposirotyNameComponent implements OnInit {
   getuserrepo(){
     return this.serviceService.getrepo(this.username).subscribe((response:any[])=>{
       console.log(response)
+      this.repositories=response
     })
+
   }
 
   ngOnInit(): void {
+    this.getuserrepo()
   }
 
 }
