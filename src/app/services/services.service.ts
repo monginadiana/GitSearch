@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import{ HttpClient } from '@angular/component/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,5 +7,5 @@ import { Injectable } from '@angular/core';
 export class ServicesService {
   
 
-  constructor() { }
+  constructor(private httpClient:HttpClient) { }
 }
