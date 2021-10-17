@@ -12,10 +12,10 @@ export class ServicesService {
 
   }
   getrepo():Observable<any[]>{
-    return this.httpClient.get<any[]>(`https://api.github.com/users/monginadiana/repos`)
+    return this.httpClient.get<any[]>(`/users/monginadiana/repos`)
   }
     
   }
 
 
-2
+
