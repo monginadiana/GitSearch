@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { ReposirotyNameComponent } from './reposiroty-name/reposiroty-name.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { ReposirotyNameComponent } from './reposiroty-name/reposiroty-name.compo
    
     NavbarComponent,
     ReposirotyNameComponent,
+    ProfileComponent,
     
   ],
   imports: [
