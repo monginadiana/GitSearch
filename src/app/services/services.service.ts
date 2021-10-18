@@ -20,7 +20,7 @@ export class ServicesService {
       '', '', '', '', 0
     )
   }
-    getprofile(gitUsername:any){
+    getprofile(gitUsername){
       interface ApiUserAnswer{
         name: string,
         login:string,
@@ -53,63 +53,35 @@ export class ServicesService {
         return userPromise
         };
        
-      }
-      getrepo(gitRepos:any){
+  
+      getrepo(gitUsername){
         interface ApiUserAnswer{
         name:string,
         description:string,
         language: string,
         html_url:string,
         forks: number
+    
     }
-        let userPromise = new Promise<void>((resolve, reject) =>
+        let repoPromise = new Promise<void>((resolve, reject) =>
         this.http.get<ApiUserAnswer>(
             environment.BASEURL +
               '/' +
-              gitRepos +
+              gitUsername +
               '??access_token=' +
               environment. keyApi
           )
           .toPromise()
           .then(
-            (response) => {
+            (response)=>{
               this.repoDetails = response;
-              resolve();
+              resolve(),
               console.log()
             },
             (error) => {
               reject(error);
               console.log(error);
             }
-          ))
-          return userPromise
- };
-
-        
-          
-            
-          
-    
-  
-     
-    
-    
-    
-      
-    
-  
-  
-  
-        
-          
-        
-  
-
-   
-  
-  
-  
-    
-  
-
-
+            ))
+          }
+ }

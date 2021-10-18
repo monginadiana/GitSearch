@@ -15,13 +15,25 @@ export class HomeComponent implements OnInit {
  
    ngOnInit(): void {
      this.getdetailsUser('monginadiana');
-    //  this.getdetailsRepo('monginadiana');
+     this.getdetailsRepo('monginadiana');
    }
    getdetailsUser(gitUsername: any) {
     this.serviceService.getprofile(gitUsername).then(
       (response) => {
         this.userDetails = this.serviceService.userDetails;
         console.log(this.userDetails);
+      },
+      (error) => {
+        console.log(error);
+      }
+    
+    );
+  } 
+  getdetailsRepo(gitUsername: any) {
+    this.serviceService.getrepo(gitUsername).then(
+      (response) => {
+        this.userRepositories = this.serviceService.repoDetails;
+        console.log(this.userRepositories);
       },
       (error) => {
         console.log(error);
