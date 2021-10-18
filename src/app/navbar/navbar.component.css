@@ -6,25 +6,24 @@
 } */
 nav{
     display: flex;
-    justify-content: space-around;
     align-items: center;
     min-height: 15vh;
-    background-color: #020202;
+    background-color: #d19438;
     width: 100%;
     padding-top: 10px;
     font-family:  cursive;
     
 }
 a {
-    color: #d19438;
+    /* color: #d19438;
     text-decoration: none;
     font-size: 30px;
     font-weight: bold;
-    padding-left: 4.5%;
+    padding-left: 4.5%; */
     
     
 }
  a:hover{
-    color: #ebe7ee;
+    color: black;
     transition: 0.2s ease-in;
 }
