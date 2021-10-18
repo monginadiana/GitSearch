@@ -43,7 +43,7 @@ export class ServicesService {
           (response) => {
             this.userDetails = response;
             resolve();
-            console.log()
+            console.log(this.userDetails)
           },
           (error) => {
             reject(error);

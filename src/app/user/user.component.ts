@@ -13,8 +13,8 @@ export class UserComponent implements OnInit {
 person:string;
 prof:User;
 showUser=false;
-searchUSer(){
-  this.person = this.searchProfileForm.value.Diana; 
+searchUser(){
+  this.person = this.searchProfileForm.value.diana; 
   console.log(this.person)
 
   this.serviceService.getProfile(this.person).then(
@@ -25,6 +25,7 @@ searchUSer(){
     (error)=>{
       console.log(error);
     });
+    
     this.showUser=true;
 }
 

@@ -1,5 +1,30 @@
-.nav{
+/* .nav{
     font-weight: 500;
-    background-color: #e45922;
+    background-color: rgb(43, 204, 3);
     text-shadow: 2px 2px rgba(19, 29, 18, 0.699);
+    
+} */
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 15vh;
+    background-color: #020202;
+    width: 100%;
+    padding-top: 10px;
+    font-family:  cursive;
+    
+}
+a {
+    color: #d19438;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    padding-left: 4.5%;
+    
+    
+}
+ a:hover{
+    color: #ebe7ee;
+    transition: 0.2s ease-in;
 }

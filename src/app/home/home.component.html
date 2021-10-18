@@ -1,7 +1,9 @@
 
 <div class= "container row" >
     <div class= "col md-3">
+
         <div class="text-start">
+            
             <h3>{{userDetails?.name}}</h3>
         </div>
         <div>
@@ -13,14 +15,19 @@
         
         <div>
             {{userDetails?.followers}} Followers.
+           
+        </div>
+        <div>
             {{userDetails?.following}} Following.
         </div>
         <div>
-            {{userDetails?.created_at}}
+            {{userDetails?.created_at 
+                | date}}
         </div>
 
     </div>
     <div class=" col md-9">
+        <br>
         <div class="card" *ngFor="let repository of Repositoriesdetails ; let i = index ">
             <h4 class="text-center">{{repository.name}}</h4>
             <p>{{repository.description}}</p>
