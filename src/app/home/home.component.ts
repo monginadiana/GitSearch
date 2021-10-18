@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
    }
    getdetailsUser(gitUsername: any) {
     this.serviceService.getprofile(gitUsername).then(
-      (response) => {
+      (Response) => {
         this.userDetails = this.serviceService.userDetails;
         console.log(this.userDetails);
       },
@@ -30,8 +30,7 @@ export class HomeComponent implements OnInit {
     );
   } 
   getdetailsRepo(gitUsername: any) {
-    this.serviceService.getrepo(gitUsername).then(
-      (response) => {
+    this.serviceService.getrepo(gitUsername).then((response) => {
         this.userRepositories = this.serviceService.repoDetails;
         console.log(this.userRepositories);
       },
