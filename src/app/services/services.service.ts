@@ -60,7 +60,7 @@ export class ServicesService {
         description:string,
         language: string,
         html_url:string,
-        forks: number
+        forks: number,
     
     }
         let repoPromise = new Promise<void>((resolve, reject) =>

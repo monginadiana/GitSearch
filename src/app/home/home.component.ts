@@ -30,7 +30,9 @@ export class HomeComponent implements OnInit {
     );
   } 
   getdetailsRepo(gitUsername: any) {
-    this.serviceService.getrepo(gitUsername).then((response) => {
+    this.serviceService.getrepo(gitUsername)
+    .then(
+      (response) => {
         this.userRepositories = this.serviceService.repoDetails;
         console.log(this.userRepositories);
       },
