@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit, ViewChild } from '@angular/core';
+import {NgForm} from '@angular/forms';
+import { ServicesService } from '../services/services.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-user',
@@ -6,8 +9,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+@ViewChild ('l') searchProfileForm:NgForm
+person:string;
+prof:User;
+showUser=false;
+searchUSer(){
+  this.person = this.searchProfileForm.value.Diana; 
+  console.log(this.person)
 
-  constructor() { }
+  this.serviceService.getProfile(this.person).then(
+    (Response)=>{
+      this.prof=this.serviceService.userDetails;
+      console.log(this.prof)
+    },
+    (error)=>{
+      console.log(error);
+    });
+    this.showUser=true;
+}
+
+
+  constructor(private serviceService: ServicesService ) {}
 
   ngOnInit(): void {
   }

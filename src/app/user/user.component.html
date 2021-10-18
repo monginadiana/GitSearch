@@ -1,6 +1,7 @@
-<div class="container" ng(submit="searchUSer()")#l="ngForm">
-    <form class="mb-3 m-5 p-5">
-        <input type="text" class="form-control search" placeholder="what is your github username.." required>
+<div class="container" >
+    <form class="mb-3 m-5 p-5" (ngsubmit)="searchUSer()" #l="ngForm">
+
+        <input type="text" class="form-control search" placeholder="what is your github username.." name= "Diana" ngModel #Diana="ngModel" required>
         <p class=""></p>
         <div class="mt-5 text-center">
         <button type="submit" class="user">Find User</button>
@@ -9,4 +10,7 @@
     </form>
     
 
+</div>
+<div >
+{{prof?.login}}
 </div>
