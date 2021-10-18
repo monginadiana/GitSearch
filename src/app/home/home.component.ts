@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Repo } from '../repo';
+// import { Repo } from '../repo';
 import { User } from '../user';
 import { ServicesService } from '../services/services.service';
 
@@ -9,16 +9,13 @@ import { ServicesService } from '../services/services.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  userDetails !: User 
-  userRepositories!: Repo;
+  userDetails : User; 
+  Repositoriesdetails: any;
    constructor(private serviceService: ServicesService ) {}
  
-   ngOnInit(): void {
-     this.getdetailsUser('monginadiana');
-     this.getdetailsRepo('monginadiana');
-   }
-   getdetailsUser(gitUsername: any) {
-    this.serviceService.getprofile(gitUsername).then(
+   
+   getdetailsUser(gitUsername) {
+    this.serviceService.getProfile(gitUsername).then(
       (Response) => {
         this.userDetails = this.serviceService.userDetails;
         console.log(this.userDetails);
@@ -29,18 +26,22 @@ export class HomeComponent implements OnInit {
     
     );
   } 
-  getdetailsRepo(gitUsername: any) {
-    this.serviceService.getrepo(gitUsername)
-    .then(
-      (response) => {
-        this.userRepositories = this.serviceService.repoDetails;
-        console.log(this.userRepositories);
+  getdetailsRepo(gitUsername) {
+    this.serviceService.getRepo(gitUsername).then(
+      (Response) => {
+        this.Repositoriesdetails =this.serviceService.repoDetails;
+        console.log(this.Repositoriesdetails)
       },
       (error) => {
-        console.log(error);
-      }
-    
-    );
-  } 
-
+              console.log(error);
+            }   
+    )
+  }
+  ngOnInit(): void {
+    this.getdetailsUser('monginadiana');
+    this.getdetailsRepo('monginadiana');
+  }
 }
+  
+
+

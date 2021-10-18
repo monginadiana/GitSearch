@@ -20,8 +20,8 @@ export class ServicesService {
       '', '', '', '', 0
     )
   }
-    getprofile(gitUsername){
-      interface ApiUserAnswer{
+    getProfile(gitUsername){
+      interface ApiResponse{
         name: string,
         login:string,
         bio: string,
@@ -31,7 +31,7 @@ export class ServicesService {
         created_at: Date
   }
       let userPromise = new Promise<void>((resolve, reject) =>
-      this.http.get<ApiUserAnswer>(
+      this.http.get<ApiResponse>(
           environment.BASEURL +
             '/' +
             gitUsername +
@@ -54,8 +54,8 @@ export class ServicesService {
         };
        
   
-      getrepo(gitUsername){
-        interface ApiUserAnswer{
+      getRepo(gitUsername){
+        interface ApiResponse{
         name:string,
         description:string,
         language: string,
@@ -64,24 +64,22 @@ export class ServicesService {
     
     }
         let repoPromise = new Promise<void>((resolve, reject) =>
-        this.http.get<ApiUserAnswer>(
+        this.http.get<ApiResponse>(
             environment.BASEURL +
               '/' +
               gitUsername +
-              '??access_token=' +
-              environment. keyApi
-          )
-          .toPromise()
-          .then(
+              '/repos?sort=created&direction=desc??access_token=' + environment.keyApi).toPromise().then(
             (response)=>{
               this.repoDetails = response;
               resolve(),
               console.log()
+        
             },
             (error) => {
               reject(error);
               console.log(error);
             }
             ))
+            return repoPromise
           }
  }
