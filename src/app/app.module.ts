@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { ReposComponent } from './repos/repos.component';
 import { SearchDirective } from './search.directive';
+import { DatePipe } from './date.pipe';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { SearchDirective } from './search.directive';
     UserComponent,
     ReposComponent,
     SearchDirective,
+    DatePipe,
     
     
     
