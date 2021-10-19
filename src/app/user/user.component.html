@@ -9,7 +9,7 @@
         </div>
     </form>
 </div>
-<div class = "card">
+<div class = "card" *ngIf="showUser">
 <img [src]="prof?.avatar_url" alt="">
 <p>name : {{prof?.name}}</p>
 <p>following:{{prof?.following}}</p>
