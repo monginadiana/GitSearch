@@ -1,0 +1,11 @@
+.card{
+    background-color: rgb(43, 204, 3);
+    color: white;
+    align-items:center ;
+}
+img{
+    max-width: 18rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 1.8rem;
+}
