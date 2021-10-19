@@ -1,6 +1,7 @@
 GitSearch
 ### Description
 An application that allows users  to enter their GitHub username into a form, submit it, and see names and descriptions of ttheir public repositories. 
+<img src="/home/access/Desktop/GitSearch/src/assets/Screenshot.png">
 
 ### By
 DIANA ONDIEKI
@@ -9,7 +10,10 @@ DIANA ONDIEKI
 Open your terminal 
 change current directory to where you want it cloned 
 type git clone git@github.com:monginadiana/GitSearch.git press enter to create a local clone 
-This is the live link for viewing my project https://monginadiana.github.io/quote/
+
+### This is the live link for viewing my project 
+
+https://monginadiana.github.io/GitSearch/repos
 
 ### Known Bugs
 No bugs in this project
