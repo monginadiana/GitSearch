@@ -1,6 +1,8 @@
 GitSearch
 ### Description
 An application that allows users  to enter their GitHub username into a form, submit it, and see names and descriptions of ttheir public repositories. 
+
+### screenshot of the application
 <img src="/home/access/Desktop/GitSearch/src/assets/Screenshot.png">
 
 ### By
