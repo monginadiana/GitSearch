@@ -9,7 +9,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { ReposComponent } from './repos/repos.component';
-import { SearchDirective } from './search.directive';
+import { BoldDirective } from './bold.directive';
+
 
 
 
@@ -20,7 +21,8 @@ import { SearchDirective } from './search.directive';
     HomeComponent,
     UserComponent,
     ReposComponent,
-    SearchDirective,
+    BoldDirective,
+    
     
     
     
