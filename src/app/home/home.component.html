@@ -1,34 +1,38 @@
 
-<div class= "container row" >
-    <div class= "col md-3">
+<div class= " profile container-fluid " >
+    <div class= "row">
 
-        <div class="text-start #profile ">
+        <div class="col-md-3 ">
+            <div class = "card">
+                <img [src]="userDetails?.avatar_url" alt="">
+            </div>
+        </div>
+        <div class="col-md-9 info">
+            <div>
+                <h3>{{userDetails?.name}}</h3>
+            </div>
+            <div>
+                {{userDetails?.login}}
+            </div>
             
-            <h3>{{userDetails?.name}}</h3>
-        </div>
-        <div card>
-            <img [src]="userDetails?.avatar_url" alt="">
-        </div>
-        <div>
-            {{userDetails?.login}}
-        </div>
-        
-        <div>
-            {{userDetails?.followers}} Followers.
-           
-        </div>
-        <div>
-            {{userDetails?.following}} Following.
-        </div>
-        <div>
-            {{userDetails?.created_at 
-                | date}}
+            <div>
+                {{userDetails?.followers}} Followers.
+               
+            </div>
+            <div>
+                {{userDetails?.following}} Following.
+            </div>
+            <div>
+                {{userDetails?.created_at 
+                    | date}}
+            </div>
+
         </div>
 
     </div>
-    <div class=" col md-9">
+    <div class="row">
         <br>
-        <div class="card" *ngFor="let repository of Repositoriesdetails ; let i = index ">
+        <div class="card col-md-4" *ngFor="let repository of Repositoriesdetails ; let i = index ">
             <h4 class="text-center">{{repository.name}}</h4>
             <p>{{repository.description}}</p>
             <a href="{{ repository.html_url }}" target="_blank" class="text-center">View Repository</a>

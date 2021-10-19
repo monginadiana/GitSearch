@@ -8,11 +8,17 @@
             <button type="submit" class="repo"> Search Repo </button>
         </div>
     </form>
+    <div class= "row">
+        <div class="col-md-4" *ngFor="let repo of Info ">
+            <div class="card">
+                <p>{{repo?.name}}</p>
+                <p> {{repo?.description}}</p>
+                <p>{{repo?.language}}</p>
+                <p> {{repo?.html_url}}</p>
+                <p>{{repo?.forks}}</p>
+            </div>
+        </div>
+    </div>
 </div>
-<div  *ngFor="let repo of Info ">
-    <p>{{repo?.name}}</p>
-    <p> {{repo?.description}}</p>
-    <p>{{repo?.language}}</p>
-    <p> {{repo?.html_url}}</p>
-    <p>{{repo?.forks}}</p>
-</div>
+
+
